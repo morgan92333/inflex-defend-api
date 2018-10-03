@@ -1,0 +1,43 @@
+{
+  "main": "./defender.js",
+  "name": "inflex-defend-api",
+  "version": "1.0.0",
+  "author": {
+    "name": "Morgan",
+    "email": "morgan92333@gmail.com",
+    "url": "https://github.com/morgan92333"
+  },
+  "dependencies": {},
+  "bugs": {
+    "url": ""
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Simple API defender",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-2": "^6.24.1"
+  },
+  "engines": {},
+  "homepage": "https://github.com/morgan92333/inflex-social",
+  "keywords": [
+    "passport",
+    "authentication"
+  ],
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "watch-node": "nodemon --exec babel-node --presets env,stage-2 examples/simple-config.js",
+    "build": "babel src --out-dir lib"
+  }
+}
