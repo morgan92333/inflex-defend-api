@@ -20,7 +20,7 @@
     "babel-preset-stage-2": "^6.24.1"
   },
   "engines": {},
-  "homepage": "https://github.com/morgan92333/inflex-social",
+  "homepage": "https://github.com/morgan92333/inflex-defend-api",
   "keywords": [
     "passport",
     "authentication"
