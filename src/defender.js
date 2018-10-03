@@ -21,7 +21,7 @@ function checkHeaders (req, key, secretKey, developer){
     }
 };
 
-export default function (key, secret, developer = false) {
+export default function (key, secret, developer = false, error) {
     return (req, res, next) => {
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -44,13 +44,17 @@ export default function (key, secret, developer = false) {
                 console.log("Header hash", req.get("hash"));
             }
 
-            return res.status(422).json({ 
-                'error' : true,
-                "code" : '4010501',
-                "type" : '',
-                "title" : 'Invalid hash',
-                "detail" : 'Invalid data in header'
-            });
+            if (error) {
+                error(req, res);
+            } else {
+                return res.status(401).json({ 
+                    'error' : true,
+                    "code" : '4010501',
+                    "type" : '',
+                    "title" : 'Invalid hash',
+                    "detail" : 'Invalid data in header'
+                });
+            }
         }
     }
 }
