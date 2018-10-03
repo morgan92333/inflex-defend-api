@@ -1,7 +1,7 @@
 {
   "main": "./defender.js",
   "name": "inflex-defend-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Morgan",
     "email": "morgan92333@gmail.com",
