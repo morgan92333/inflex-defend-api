@@ -10,7 +10,7 @@ function checkHeaders (req, key, secretKey, developer){
 
     let a      = new Buffer(crypto.createHash('md5').update(apiKey).digest("hex") + secret).toString('base64'),
         myHash = new Buffer(crypto.createHash('sha1').update(nonce + created + a).digest("hex")).toString('base64');
-console.log(secret, apiKey, hisHash, myHash);
+
     if (hisHash == myHash || developer) {
         if (developer && hisHash != myHash)
             console.log('Invalid hash, but developer mode is active');
