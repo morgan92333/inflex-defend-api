@@ -10,12 +10,12 @@ function generateNonce() {
     return text;
   }
 
-export default function (key, secret) {
+export default function (secret, key) { 
     let nonce   = generateNonce(),
         created = Math.round(new Date() / 1000),
 
-        a      = new Buffer(crypto.createHash('md5').update(key).digest("hex") + secret).toString('base64'),
-        myHash = new Buffer(crypto.createHash('sha1').update(nonce + created + a).digest("hex")).toString('base64');
+        a      = Buffer.from(crypto.createHash('md5').update(key).digest("hex") + secret).toString('base64'),
+        myHash = Buffer.from(crypto.createHash('sha1').update(nonce + created + a).digest("hex")).toString('base64');
 
     return {
         'Nonce' : nonce,

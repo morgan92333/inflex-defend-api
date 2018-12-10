@@ -7,8 +7,11 @@ const generator = require('./' + dir + '/generator');
 
 module.exports = function (key, secret) {
     return {
-        'defend' : function (developer) {
-            return defender.default(key, secret, developer);
+        'defend' : function (developer, except, error, canFromHoro) {
+            except = except ? except : [];
+            error = error ? error : null;
+
+            return defender.default(key, secret, developer, canFromHoro || false, except, error);
         },
 
         'generate' : function () {
